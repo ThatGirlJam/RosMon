@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/ThatGirlJam/RosMon#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4"
   }
 }

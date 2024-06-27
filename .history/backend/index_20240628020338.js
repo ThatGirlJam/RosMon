@@ -1,5 +1,6 @@
+import dotenv from "dotenv";
+
 //Importing necessary modules and models
-const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -14,7 +15,7 @@ dotenv.config();
 mongoose
   .connect(
     //"mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority"
-    process.env.ATLAS_URI
+    "mongodb+srv://jaimengjm:u3XcmIIpxyOMLhdI@cluster0.thl2le3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => console.log("Database connected successfully"))
   .catch((err) => console.log("Database connection failed", err));
