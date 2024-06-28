@@ -7,12 +7,7 @@ let API_URL = ""; // Define the API URL based on environment
 
 const rootUri = process.env.REACT_APP_SERVER_URL
   ? process.env.REACT_APP_SERVER_URL
-  : "http://localhost:8000/";
-
-//const apiVersion = "v1";
-//API_URL = `${rootUri}/api/${apiVersion}`; //this is the base path
-
-API_URL = `${rootUri}/api/`;
+  : "http://localhost:8000/api";
 
 //SIGNIN
 export const signin = (user) => {
