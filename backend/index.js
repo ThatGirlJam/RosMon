@@ -49,3 +49,9 @@ app.use(cors(corsOptions));
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
 app.use("/api", Authroute);
+
+//Adding a route, where we use Express app to listen for a
+//get request at the path '/' which is root or homepage
+app.get("/", (req, res) => {
+  res.send("Hello from our server!"); //usually sends JSON object or array of data
+});
