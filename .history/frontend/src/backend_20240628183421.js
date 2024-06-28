@@ -51,7 +51,11 @@ export const authenticate = (data, next) => {
   // Storing JWT token in user's browser
   if (typeof window !== "undefined") {
     localStorage.setItem("jwt", JSON.stringify(data));
-    next();
+    //next();
+    console.log("Is next a function?", typeof next === "function"); // Add this line
+    if (typeof next === "function") {
+      next();
+    }
   }
 };
 

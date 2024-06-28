@@ -51,7 +51,11 @@ export const authenticate = (data, next) => {
   // Storing JWT token in user's browser
   if (typeof window !== "undefined") {
     localStorage.setItem("jwt", JSON.stringify(data));
-    next();
+    //next();
+    console.log("Is next a function?", typeof next === "function"); // Add this line
+    if (typeof next === "function") {
+      next();
+    }
   }
 };
 
@@ -65,7 +69,12 @@ export const signout = (next) => {
       .get(`${API_BASE_URL}/signout`)
       .then((response) => {
         console.log(response.data);
-        next();
+        //next();
+        console.error("Expected next to be a function, got:", typeof next);
+        console.log("Is next a function?", typeof next === "function"); // Add this line
+        if (typeof next === "function") {
+          next();
+        }
       })
       .catch((err) => console.log(err));
   }
