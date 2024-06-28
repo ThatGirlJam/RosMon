@@ -66,5 +66,5 @@ jobs:
       # Push the Docker images to Docker Hub
       - name: Push Docker Images to Docker Hub
         run: |
-          docker push thatgirljam/rosmon:frontend-${{github.run_number}}
-          docker push thatgirljam/rosmon:backend-${{github.run_number}}
+          docker push rakeshpotnuru/productivity-app:client-${{github.run_number}}
+          docker push rakeshpotnuru/productivity-app:server-${{github.run_number}}
