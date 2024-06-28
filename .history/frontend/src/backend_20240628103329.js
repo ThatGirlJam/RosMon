@@ -34,7 +34,7 @@ export const signin = (user) => {
 export const signup = (user) => {
   // API call to sign up a user
   return axios
-    .post(`${API_URL}/signup`, JSON.stringify(user), {
+    .post("http://localhost:8000/api/signup", JSON.stringify(user), {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
 
     axios
-      .get(`${API_URL}/signout`)
+      .get("http://localhost:8000/api/signout")
       .then((response) => {
         console.log(response.data);
         next();

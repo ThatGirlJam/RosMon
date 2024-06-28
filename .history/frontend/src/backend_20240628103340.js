@@ -65,7 +65,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
 
     axios
-      .get(`${API_URL}/signout`)
+      .get("http://localhost:8000/api/signout")
       .then((response) => {
         console.log(response.data);
         next();
