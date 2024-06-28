@@ -13,7 +13,7 @@
       "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     },
     {
-      "source": "/ros-mon.vercel.app/(.*)",
+      "source": "/vercel_app_domain_name/(.*)",
       "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     }
   ]
