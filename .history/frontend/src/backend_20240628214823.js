@@ -13,16 +13,12 @@ const API_BASE_URL =
 export const signin = (user) => {
   // API call to sign in a user
   return axios
-    .post(
-      `${API_BASE_URL}/signin`,
-      JSON.stringify(user)
-      // {
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json",
-      //   },
-      // }
-    )
+    .post(`${API_BASE_URL}/signin`, JSON.stringify(user), {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
     .then((response) => {
       return response.data; // Return response data
     })
@@ -35,16 +31,12 @@ export const signin = (user) => {
 export const signup = (user) => {
   // API call to sign up a user
   return axios
-    .post(
-      `${API_BASE_URL}/signup`,
-      JSON.stringify(user)
-      // {
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json",
-      //   },
-      // }
-    )
+    .post(`${API_BASE_URL}/signup`, JSON.stringify(user), {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
     .then((response) => {
       console.log(response.data);
       return response.data; // Return response data
