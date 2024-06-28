@@ -7,7 +7,7 @@ import axios from "axios";
 const API_BASE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000/api"
-    : `${REACT_APP_SERVER_URL}/api`;
+    : "https://ros-mon-backend.vercel.app/api";
 
 //SIGNIN
 export const signin = (user) => {
