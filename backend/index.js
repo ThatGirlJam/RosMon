@@ -28,6 +28,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+// Ensure OPTIONS requests are handled properly
+app.options("*", cors(corsOptions));
 
 // Database Connection
 // Replace <username>, <password>, <cluster>, and <dbname> with your MongoDB Atlas credentials.
@@ -52,9 +54,6 @@ app.use(cookieParser());
 
 // // CORS for enabling Cross-Origin Resource Sharing -- used the other corsOption
 // app.use(cors());
-
-// Ensure OPTIONS requests are handled properly
-app.options("*", cors(corsOptions));
 
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
