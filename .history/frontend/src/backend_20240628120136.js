@@ -3,6 +3,21 @@ import axios from "axios";
 
 //USER AND AUTH ROUTES
 
+// let API_URL = ""; // Define the API URL based on environment
+
+// // const rootUri = process.env.REACT_APP_SERVER_URL
+// //   ? process.env.REACT_APP_SERVER_URL
+// //   : "http://localhost:8000/";
+
+// const rootUri = "http://localhost:8000/";
+
+// //const apiVersion = "v1";
+// //API_URL = `${rootUri}/api/${apiVersion}`; //this is the base path
+
+// API_URL = `${rootUri}/api`;
+
+// const API_URL = "http://localhost:8000/api";
+
 //SIGNIN
 export const signin = (user) => {
   // API call to sign in a user
@@ -25,7 +40,7 @@ export const signin = (user) => {
 export const signup = (user) => {
   // API call to sign up a user
   return axios
-    .post("http://localhost:8000/api/signup", JSON.stringify(user), {
+    .post(`${API_URL}/signup`, JSON.stringify(user), {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -56,7 +71,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
 
     axios
-      .get("http://localhost:8000/api/signout")
+      .get(`${API_URL}/signout`)
       .then((response) => {
         console.log(response.data);
         next();

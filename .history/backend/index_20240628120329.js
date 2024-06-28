@@ -9,6 +9,13 @@ const mongoose = require("mongoose");
 const Authroute = require("./routes/authRoute");
 dotenv.config();
 
+// const corsOptions = {
+//   origin: "https://ros-mon.vercel.app",
+//   optionsSuccessStatus: 200,
+// };
+
+// app.use(cors(corsOptions));
+
 // Database Connection
 // Replace <username>, <password>, <cluster>, and <dbname> with your MongoDB Atlas credentials.
 mongoose
