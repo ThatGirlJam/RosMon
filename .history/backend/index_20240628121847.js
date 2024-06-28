@@ -10,7 +10,10 @@ const Authroute = require("./routes/authRoute");
 dotenv.config();
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://ros-mon.vercel.app"],
+  origin: [
+    "http://localhost:3000",
+    "https://your-deployed-frontend-url.vercel.app",
+  ],
   credentials: true, // enable set cookie
 };
 
@@ -35,8 +38,8 @@ app.listen(port, () => {
 app.use(bodyParser.json());
 // Cookie-parser for handling cookies
 app.use(cookieParser());
-// // CORS for enabling Cross-Origin Resource Sharing -- used the other corsOption
-// app.use(cors());
+// CORS for enabling Cross-Origin Resource Sharing
+app.use(cors());
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
 app.use("/api", Authroute);
