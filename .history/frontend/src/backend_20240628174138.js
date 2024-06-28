@@ -52,7 +52,6 @@ export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
     localStorage.setItem("jwt", JSON.stringify(data));
     //next();
-    console.log("Is next a function?", typeof next === "function"); // Add this line
     if (typeof next === "function") {
       next();
     }
@@ -69,12 +68,7 @@ export const signout = (next) => {
       .get(`${API_BASE_URL}/signout`)
       .then((response) => {
         console.log(response.data);
-        //next();
-        console.error("Expected next to be a function, got:", typeof next);
-        console.log("Is next a function?", typeof next === "function"); // Add this line
-        if (typeof next === "function") {
-          next();
-        }
+        next();
       })
       .catch((err) => console.log(err));
   }

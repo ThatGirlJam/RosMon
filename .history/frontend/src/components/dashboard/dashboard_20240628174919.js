@@ -8,6 +8,11 @@ const Dashboard = () => {
   const authenticatedUser = isAuthenticated(); // Check if the user is authenticated
 
   // // Function to handle signout action
+  // const onSignout = () => {
+  //   signout(); // Perform signout action
+  //   console.log("Signed out");
+  //   navigate("/signin"); // Redirect to login page after sign out
+  // };
   const onSignout = () => {
     signout(() => {
       // Pass a callback function to signout

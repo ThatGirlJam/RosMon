@@ -70,7 +70,6 @@ export const signout = (next) => {
       .then((response) => {
         console.log(response.data);
         //next();
-        console.error("Expected next to be a function, got:", typeof next);
         console.log("Is next a function?", typeof next === "function"); // Add this line
         if (typeof next === "function") {
           next();
