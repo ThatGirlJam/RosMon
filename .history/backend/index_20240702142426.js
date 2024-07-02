@@ -9,28 +9,26 @@ const mongoose = require("mongoose");
 const Authroute = require("./routes/authRoute");
 dotenv.config();
 
-// const corsOptions = {
-//   origin: ["http://localhost:3000", "https://ros-mon.vercel.app"],
-//   methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE", "OPTIONS"],
-//   allowedHeaders: [
-//     "X-CSRF-Token",
-//     "X-Requested-With",
-//     "Accept",
-//     "Accept-Version",
-//     "Content-Length",
-//     "Content-MD5",
-//     "Content-Type",
-//     "Date",
-//     "X-Api-Version",
-//   ],
-//   credentials: true, // enable set cookie
-// };
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://ros-mon.vercel.app"],
+  methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: [
+    "X-CSRF-Token",
+    "X-Requested-With",
+    "Accept",
+    "Accept-Version",
+    "Content-Length",
+    "Content-MD5",
+    "Content-Type",
+    "Date",
+    "X-Api-Version",
+  ],
+  credentials: true, // enable set cookie
+};
 
-// app.use(cors(corsOptions));
-// // Ensure OPTIONS requests are handled properly
-// app.options("*", cors(corsOptions));
-
-app.use(cors());
+app.use(cors(corsOptions));
+// Ensure OPTIONS requests are handled properly
+app.options("*", cors(corsOptions));
 
 // Database Connection
 // Replace <username>, <password>, <cluster>, and <dbname> with your MongoDB Atlas credentials.
@@ -53,15 +51,12 @@ app.use(bodyParser.json());
 // Cookie-parser for handling cookies
 app.use(cookieParser());
 
-console.log("Middleware Configured");
-
 // // CORS for enabling Cross-Origin Resource Sharing -- used the other corsOption
 // app.use(cors());
 
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
 app.use("/api", Authroute);
-console.log("Mounted auth routes");
 
 //Adding a route, where we use Express app to listen for a
 //get request at the path '/' which is root or homepage

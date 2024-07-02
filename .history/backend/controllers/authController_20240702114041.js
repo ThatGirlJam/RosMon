@@ -59,8 +59,8 @@ exports.signin = async (req, res) => {
     // Setting JWT token as a cookie in the browser
     const token = jwtToken.sign({ _id: user._id }, "shhhhh");
     res.cookie("token", token, { expire: new Date() + 9999 });
-    const { _id, name, mcr, email } = user;
-    return res.json({ token, user: { _id, name, mcr, email } });
+    const { _id, name, email } = user;
+    return res.json({ token, user: { _id, name, email } });
   });
 };
 // SIGNOUT: Clearing user token

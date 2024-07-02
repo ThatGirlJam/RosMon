@@ -61,7 +61,6 @@ console.log("Middleware Configured");
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
 app.use("/api", Authroute);
-console.log("Mounted auth routes");
 
 //Adding a route, where we use Express app to listen for a
 //get request at the path '/' which is root or homepage

@@ -17,10 +17,9 @@ const userSchema = new mongoose.Schema(
     mcr: {
       type: String,
       required: true,
-      unique: true, //unique to each doctor
       trim: true,
       maxLength: 10,
-      minLength: 7, //could be max 7 also
+      minLength: 7,
     },
     email: {
       type: String,

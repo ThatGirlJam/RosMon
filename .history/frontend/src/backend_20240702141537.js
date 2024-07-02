@@ -11,7 +11,6 @@ const API_BASE_URL =
 
 //SIGNIN
 export const signin = (user) => {
-  console.log("API call to sign in");
   // API call to sign in a user
   return axios
     .post(`${API_BASE_URL}/signin`, JSON.stringify(user), {
@@ -31,8 +30,6 @@ export const signin = (user) => {
 
 //SIGNUP
 export const signup = (user) => {
-  console.log("API call to sign up");
-
   // API call to sign up a user
   return axios
     .post(`${API_BASE_URL}/signup`, JSON.stringify(user), {
