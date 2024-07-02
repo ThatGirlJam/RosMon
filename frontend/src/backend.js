@@ -18,6 +18,7 @@ export const signin = (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      credentials: "include", // Important for cookies to be sent
     })
     .then((response) => {
       return response.data; // Return response data
@@ -36,6 +37,7 @@ export const signup = (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      credentials: "include", // Important for cookies to be sent
     })
     .then((response) => {
       console.log(response.data);
