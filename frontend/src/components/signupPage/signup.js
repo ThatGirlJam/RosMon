@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { signup } from "../../backend.js";
 import "./signup.css";
+import NavbarSignup from "../navbars/navbarSignup.js";
 
 // Signup component for the signup form
 function Signup() {
@@ -89,44 +90,47 @@ function Signup() {
   };
 
   return (
-    <div className="form-container">
-      <div className="form-box">
-        <h2>Create an account</h2>
-        {errorMessage()}
-        {loadingMessage()}
-        {successMessage()}
-        <div className="form-group">
-          <label htmlFor="name">Username</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            onChange={handleChange("name")}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            onChange={handleChange("email")}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            onChange={handleChange("password")}
-            required
-          />
-        </div>
-        <div className="form-group-button">
-          <button onClick={onSubmit}>Signup</button>
+    <div>
+      <NavbarSignup />
+      <div className="form-container">
+        <div className="form-box">
+          <h2>Create an account</h2>
+          {errorMessage()}
+          {loadingMessage()}
+          {successMessage()}
+          <div className="form-group">
+            <label htmlFor="name">Username</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              onChange={handleChange("name")}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              onChange={handleChange("email")}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleChange("password")}
+              required
+            />
+          </div>
+          <div className="form-group-button">
+            <button onClick={onSubmit}>Signup</button>
+          </div>
         </div>
       </div>
     </div>
