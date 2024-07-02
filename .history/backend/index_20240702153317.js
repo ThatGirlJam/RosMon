@@ -51,10 +51,11 @@ app.listen(port, () => {
 app.use(bodyParser.json());
 // Cookie-parser for handling cookies
 app.use(cookieParser());
+
 console.log("Middleware Configured");
 
 // // CORS for enabling Cross-Origin Resource Sharing -- used the other corsOption
-app.use(cors());
+// app.use(cors());
 
 // Routing
 // Mounting authentication-related routes under the '/api' endpoint
