@@ -6,7 +6,7 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from "./navbarElements";
+} from "./navbarSignupElements";
 
 const NavbarSignup = () => {
   return (
@@ -16,10 +16,12 @@ const NavbarSignup = () => {
 
         <NavMenu>
           {/* <NavLink to="/signin">Signin</NavLink> */}
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          <NavBtn>
+            <NavBtnLink to="/signup">Sign Up for RosMon</NavBtnLink>
+          </NavBtn>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          <NavBtnLink to="/signup">Sign Up for User</NavBtnLink>
         </NavBtn>
       </Nav>
     </>
