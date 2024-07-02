@@ -60,13 +60,13 @@ exports.signin = async (req, res) => {
     const token = jwtToken.sign({ _id: user._id }, "shhhhh");
     res.cookie("token", token, { expire: new Date() + 9999 });
     const { _id, name, mcr, email } = user;
-    return res.status(200).json({ token, user: { _id, name, mcr, email } });
+    return res.json({ token, user: { _id, name, mcr, email } });
   });
 };
 // SIGNOUT: Clearing user token
 exports.signout = (req, res) => {
   res.clearCookie("token");
-  res.status(200).json({
+  res.json({
     message: "User has signed out",
   });
 };

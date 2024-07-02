@@ -66,7 +66,7 @@ exports.signin = async (req, res) => {
 // SIGNOUT: Clearing user token
 exports.signout = (req, res) => {
   res.clearCookie("token");
-  res.status(200).json({
+  res.json({
     message: "User has signed out",
   });
 };
