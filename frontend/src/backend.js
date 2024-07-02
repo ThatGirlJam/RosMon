@@ -9,20 +9,6 @@ const API_BASE_URL =
     ? "http://localhost:8000/api"
     : `${process.env.REACT_APP_SERVER_URL}/api`;
 
-// Function to perform a GET request to the server URL
-export const testServerURL = () => {
-  return axios
-    .get(API_BASE_URL) // Perform GET request to server URL
-    .then((response) => {
-      console.log("Server Response:", response.data); // Log server response data
-      return response.data; // Return server response data
-    })
-    .catch((err) => {
-      console.error("Error fetching server data:", err); // Log error if GET request fails
-      throw err; // Throw error to handle it elsewhere if needed
-    });
-};
-
 //SIGNIN
 export const signin = (user) => {
   // API call to sign in a user
